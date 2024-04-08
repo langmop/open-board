@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
-const server = app.listen(port, (err) => {
+const server = app.listen(process.env.port || port, (err) => {
   if (err) console.log("some error while starting server", err);
   console.log(`server running on port ${port}`);
 });
